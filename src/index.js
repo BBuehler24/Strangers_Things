@@ -1,17 +1,54 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import Root from './routes/root';
+import Welcome from './components/Welcome';
+import Posts from './components/Posts';
+import Profile from './components/Profile';
+import Login from './components/Login';
+import Register from './components/Register';
+import Post from './components/Post';
+import CreatePosts from './components/CreatePost';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// how to use react-router dom
+  // step1: we have to install it, doesnt come included with react
+  // step2: got to react-router-dom docs and copy the boilerplate
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "/", 
+        element: <Welcome />},
+      {
+        path: "/posts",
+        element: <Posts />,
+      },
+      {
+        path: "/createpost",
+        element: <CreatePosts />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/posts/:postId",
+        element: <Post />,
+      }
+    ]
+  },
+])
+
+ReactDOM.render(<RouterProvider router={router} />, document.getElementById('root'))

@@ -1,0 +1,18 @@
+nav {
+    margin: -9px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(111, 111, 142);
+    box-shadow: 10px 5px 5px rgb(45, 44, 44);
+}
+
+a {
+    color: black;
+    padding: 20px;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+div {
+    margin-bottom: 20px;
+}
