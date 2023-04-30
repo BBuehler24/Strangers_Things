@@ -1,13 +1,15 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import "../css/login.css";
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
+    
+    const navigate= useNavigate();
 
     const loginUser = async (event) => {
         event.preventDefault();
@@ -19,8 +21,8 @@ const Login = () => {
                 },
                 body: JSON.stringify({
                     user: {
-                        username,
-                        password,
+                        username: username,
+                        password: password,
                     }
                 })
             });
@@ -31,25 +33,27 @@ const Login = () => {
             } else {
                 setMessage(result.data.message)
             }
-            console.log(result);
             localStorage.setItem('token', result.data.token)
+            console.log(result);
         } catch (error) {
             console.log(error);
         }
+        navigate('/profile');
     }
 
     return (
         <div>
             <header>
-                <h1>Welcome to Strangers' Things!</h1>
-                <h2>Login Below:</h2>
+                <h1>Welcome Back to Stranger's Things!</h1>
             </header>
 
             <div className="login-main">
+            <label>Login Below:</label>
                 <form
                 id="login"
                 onSubmit={loginUser}
                 >
+                <div className='login-field'>
                     <input
                     value={username}
                     type="text"
@@ -67,9 +71,10 @@ const Login = () => {
                         setPassword(e.target.value);
                     }}
                     />
+                    </div>
                     <br/>
                     <br/>
-                    <button>Login</button>
+                    <button id="login-button">Login</button>
                     <br/>
                     {/* <Link to={"/register"}>No Username/Password? Register Here!</Link> */}
                 </form>

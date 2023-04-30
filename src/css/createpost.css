@@ -1,0 +1,38 @@
+.create-new-post label {
+    color:  rgb(36, 36, 75);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.create-new-post input {
+    color:  rgb(36, 36, 75);
+    width: 20%;
+    padding: 0.8;
+    margin: 0.4vw 0;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.create-new-post input,
+placeholder {
+    opacity: 50%;
+}
+
+.newPost-field {
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+#submit-post {
+    margin-top: 20px;
+    display: inline-block;
+    width: 20%;
+    height: 2rem;
+    color: rgb(36, 36, 75);
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+}
+
+
+

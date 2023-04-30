@@ -1,0 +1,21 @@
+.edit-post-data {
+    margin-top: -50px;
+}
+
+.post-edit {
+    color: red;
+}
+
+.post-edit
+input {
+    color: rgb(36, 36, 75);
+}
+
+#edit-title {
+    color:  rgb(92, 92, 186);
+    text-decoration: underline;
+}
+
+#seller {
+    color: red;
+}

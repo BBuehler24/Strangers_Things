@@ -1,0 +1,33 @@
+.form-box {
+    margin-top: -30px;
+}
+
+.form-box label {
+    color:  rgb(36, 36, 75);
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: -30px;
+}
+
+.form-box input {
+    color:  rgb(36, 36, 75);
+    width: 20%;
+    margin: 0.4vw 0;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.form-box input,
+placeholder {
+    opacity: 50%;
+}
+
+#submit-button {
+    display: inline-block;
+    width: 10%;
+    height: 2rem;
+    color: rgb(36, 36, 75);
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+}

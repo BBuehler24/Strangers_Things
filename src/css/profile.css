@@ -1,0 +1,28 @@
+#my-posts {
+    font-size: 30px;
+    text-decoration: underline;
+    color:  rgb(92, 92, 186);
+}
+
+#my-messages {
+    font-size: 30px;
+    text-decoration: underline;
+    color:  rgb(92, 92, 186);
+}
+
+#user-welcome {
+    text-decoration: underline;
+    color: red;
+    text-align: center;
+}
+
+.post {
+    border: solid;
+    padding: 5px;
+}
+
+.messages {
+    border: solid;
+    padding: 5px;
+}
+

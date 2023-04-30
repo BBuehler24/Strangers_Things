@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../css/createpost.css";
 
 const CreatePosts = () => {
     const [title, setTitle] = useState('');
@@ -13,7 +14,7 @@ const CreatePosts = () => {
 
         try {
             const response = await fetch('https://strangers-things.herokuapp.com/api/2301-FTB-MT-WEB-PT/posts', {
-                method: "POSTS",
+                method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${localToken}`
@@ -41,8 +42,12 @@ const CreatePosts = () => {
     }
 
     return (
-        <div>
+        <div className="create-new-post">
+        <br/>
+        <br/>
+        <label>Create A New Post:</label>
         <form onSubmit={handleSubmit}>
+            <div className="newPost-field">
             <input 
                 value={title}
                 type="text"
@@ -87,9 +92,9 @@ const CreatePosts = () => {
                     setWillDeliver(!willDeliver);
                 }}
             />
-
+            </div>
             <br/>
-            <button>Submit New Post</button>
+            <button id="submit-post">Submit New Post</button>
         </form>
         </div>
         

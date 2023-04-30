@@ -26,10 +26,10 @@ const Navbar = ({user, setToken, setUser}) => {
       {!user._id && (
         <>
       <Link to={"/register"}>Register</Link>
-      <Link to= "/login">Login</Link>
+      <Link to={"/login"}>Login</Link>
       </>
       )}
-      <span>Welcome {user.username} !</span>
+      <span id="user-name">Welcome {user.username} !</span>
     </nav>
   );
 };

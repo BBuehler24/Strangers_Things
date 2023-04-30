@@ -1,18 +1,29 @@
 nav {
-    margin: -9px;
+    margin: -8px;
+    padding-left: 10px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     background-color: rgb(111, 111, 142);
     box-shadow: 10px 5px 5px rgb(45, 44, 44);
 }
 
 a {
-    color: black;
+    color: white;
     padding: 20px;
     font-size: 20px;
     text-decoration: underline;
 }
 
+a:hover {
+    color: red;
+}
+
 div {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+#user-name {
+    color: white;
+    margin-top: 24px;
+    margin-left: 60px;
 }

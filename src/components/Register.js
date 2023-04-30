@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate, useOutletContext, Link } from 'react-router-dom';
+import "../css/register.css";
 
 // We need to setup a form for client to register & acquire token for access.
 
@@ -57,7 +58,14 @@ const Register = () => {
 
     return (
         <div>
-            <form onSubmit={handleRegister}>
+            <header>
+                <h1>Welcome To Stranger's Things!</h1>
+            </header>
+        <div className="form-box">
+            <form id="register-form" onSubmit={handleRegister}>
+            <div className="field">
+            <label>User Info:</label> 
+            <br/>
                 <input 
                 onChange={(e) => setUsername(e.target.value)}
                 value={username}
@@ -79,12 +87,13 @@ const Register = () => {
                 type="password" />
 
                 <br/>
-
-                <button>Register</button>
+            </div>
+                <button id="submit-button">Register</button>
             </form>
             <p>{error}</p>
             <p>{message}</p>
             <Link to={"/login"}>Already Registered? Login Here!</Link>
+        </div>
         </div>
     )
 }

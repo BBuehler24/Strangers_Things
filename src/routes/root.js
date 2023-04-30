@@ -46,7 +46,7 @@ const Root = () => {
     return (
     <div>
     <Navbar user={user} setUser={setUser} setToken={setToken}/>
-    <Outlet context={{ user, posts, setToken, token, setUser }}/>
+    <Outlet context={{ user, posts, setToken, token, setUser, setPosts, fetchPosts }}/>
     </div>
     )
 }

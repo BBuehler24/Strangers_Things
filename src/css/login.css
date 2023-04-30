@@ -1,0 +1,38 @@
+form {
+    padding: 30px;
+}
+
+.login-main label {
+    color:  rgb(36, 36, 75);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.login-main input {
+    color:  rgb(36, 36, 75);
+    width: 20%;
+    padding: 0.8;
+    margin: 0.4vw 0;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.login-main input,
+placeholder {
+    opacity: 50%;
+}
+
+.login-field {
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+#login-button {
+    display: inline-block;
+    width: 10%;
+    height: 2rem;
+    color: rgb(36, 36, 75);
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+}

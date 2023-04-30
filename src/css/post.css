@@ -1,0 +1,27 @@
+.individual-posts {
+    border: solid;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+#title {
+    text-align: center;
+    text-decoration: underline;
+    color:  rgb(92, 92, 186);
+}
+
+#description {
+    font-size: 20px;
+}
+
+#price {
+    font-size: 20px;
+}
+
+#location {
+    font-size: 20px;
+}
+
+#willDeliver {
+    font-size: 20px;
+}

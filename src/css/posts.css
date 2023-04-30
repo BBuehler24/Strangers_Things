@@ -1,0 +1,10 @@
+.post-listing {
+    color:  rgb(92, 92, 186);
+    margin: 0px;
+    border-left: .2rem solid;
+    border-left-color: red;
+}
+
+.posts {
+    margin-top: 10px;
+}

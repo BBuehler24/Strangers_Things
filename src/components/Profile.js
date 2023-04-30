@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from "react-router-dom";
+import "../css/profile.css";
 
-const Profile = ({user, setUser}) => { // was trying to pass token here
+const Profile = ({ setUser }) => { // was trying to pass token here
     const[userPosts, setUserPosts] = useState([]);
     const [userMessages, setUserMessages]= useState([]);
 
-    const { token } = useOutletContext(); // but did here instead
+    const { token, user } = useOutletContext(); // but did here instead
 
     const getUserData = async () => {
         const response = await fetch('https://strangers-things.herokuapp.com/api/2301-FTB-MT-WEB-PT/users/me', {
@@ -21,13 +22,16 @@ const Profile = ({user, setUser}) => { // was trying to pass token here
         setUserMessages(info.data.messages)
         console.log(userPosts);
     }
+
     useEffect(() => {
         getUserData();
     }, []);
+   
 
     return (
         <div>
-        <h2>My Posts:</h2>
+        <h2 id="my-posts">My Posts:</h2>
+        <h3 id="user-welcome">Welcome {user.username} !</h3>
             {
                 userPosts.map((post, idx) => {
                     const {title, price, location, description} = post;
@@ -41,26 +45,30 @@ const Profile = ({user, setUser}) => { // was trying to pass token here
                     </div>
                 })
             }
-        <h2>Received Messages:</h2>
+        <h2 id="my-messages">Received Messages:</h2>
             {
                 userMessages.map((msg, idx) => {
                     return <div key={idx}>
+                        <div className="messages">
+                            <h3>{msg.post.title}</h3>
+                            <div>From: {msg.fromUser.username}</div>
+                            <div>Message: {msg.content}</div>
+                            </div>
+                        </div>
+                })
+            }
+        <h2 id="my-messages">Sent Messages:</h2>
+            {
+                userMessages.map((msg, idx) => {
+                    return <div key={idx}>
+                    <div className="messages">
                     <h3>{msg.post.title}</h3>
                     <div>From: {msg.fromUser.username}</div>
                     <div>Message: {msg.content}</div>
+                    </div>
                     </div>
                 })
             }
-        {/* <h2>Sent Messages:</h2>
-            {
-                userMessages.map((msg, idx) => {
-                    return <div key={idx}>
-                    <h3>{msg.post.title}</h3>
-                    <div>From: {msg.fromUser.username}</div>
-                    <div>Message: {msg.content}</div>
-                    </div>
-                })
-            } */}
         </div>
     )
 }
