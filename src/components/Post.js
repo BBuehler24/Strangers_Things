@@ -65,7 +65,7 @@ const Post = () => {
             </button>
             </div>
         )}
-        {user._id && (
+        {user._id && !editMode && (
             <div id="author-options">
             <button className="author-options-edit" onClick={() => setEditMode(true)}>
                 Edit Post

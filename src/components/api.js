@@ -1,19 +1,21 @@
-import React from 'react';
+import React from "react";
 
 export async function updatePost(
-    postToUpdate,
-    token,
-    itemName,
-    itemDescription,
-    itemPrice,
-    itemLocation,
-    willDeliverItem
-  ) {
-    try {
-      const response = await fetch(`https://strangers-things.herokuapp.com/api/2301-FTB-MT-WEB-PT/posts/${postToUpdate}`, {
-        method: 'PATCH',
+  postToUpdate,
+  token,
+  itemName,
+  itemDescription,
+  itemPrice,
+  itemLocation,
+  willDeliverItem
+) {
+  try {
+    const response = await fetch(
+      `https://strangers-things.herokuapp.com/api/2301-FTB-MT-WEB-PT/posts/${postToUpdate}`,
+      {
+        method: "PATCH",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
@@ -25,21 +27,24 @@ export async function updatePost(
             willDeliver: willDeliverItem,
           },
         }),
-      });
-      const result = await response.json();
-      console.log(result);
-      return result;
-    } catch (err) {
-      console.error(err);
-    }
+      }
+    );
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (err) {
+    console.error(err);
   }
+}
 
-  export async function messageSend(postId, token, messageContent) {
-    try {
-      const response = await fetch(`https://strangers-things.herokuapp.com/api/2301-FTB-MT-WEB-PT/posts/${postId}/messages`, {
-        method: 'POST',
+export async function messageSend(postId, token, messageContent) {
+  try {
+    const response = await fetch(
+      `https://strangers-things.herokuapp.com/api/2301-FTB-MT-WEB-PT/posts/${postId}/messages`,
+      {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
@@ -47,11 +52,12 @@ export async function updatePost(
             content: `${messageContent}`,
           },
         }),
-      });
-      const result = await response.json();
-      console.log(result);
-      return result;
-    } catch (err) {
-      console.error(err);
-    }
+      }
+    );
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (err) {
+    console.error(err);
   }
+}
