@@ -4,15 +4,17 @@ import Navbar from "../components/Navbar";
 
 const Root = () => {
     const [posts, setPosts] = useState([]);
+    const [displayedPosts, setDisplayedPosts] = useState([]);
     const [token, setToken] = useState('');
     const [user, setUser] = useState({});
-    
+
 
     // putting fetchPosts/posts in root so we can pass down as prop in <Outlet /> for use in rest of app
      const fetchPosts = async () => { 
         const response = await fetch('https://strangers-things.herokuapp.com/api/2301-FTB-MT-WEB-PT/posts'); //add correct URL
         const info = await response.json();
         setPosts(info.data.posts);
+        setDisplayedPosts(info.data.posts);
         console.log(posts);
     }
 
@@ -46,7 +48,7 @@ const Root = () => {
     return (
     <div>
     <Navbar user={user} setUser={setUser} setToken={setToken}/>
-    <Outlet context={{ user, posts, setToken, token, setUser, setPosts, fetchPosts }}/>
+    <Outlet context={{ user, posts, setToken, token, setUser, setPosts, fetchPosts, displayedPosts, setDisplayedPosts }}/>
     </div>
     )
 }
