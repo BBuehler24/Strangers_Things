@@ -13,7 +13,6 @@ const Posts = () => {
         posts={posts}
       />
       <div className="posts">
-        {/* <Outlet context={{ displayedPosts }} /> */}
         {displayedPosts.map((post) => {
           return (
             <Link key={post._id} to={`/posts/${post._id}`}>
